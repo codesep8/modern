@@ -1,7 +1,7 @@
 <template>
     <main class="flex justify-center">
         <div class="flex flex-col md:flex-row md:gap-4 md:m-4 items-start w-full">
-            <div class="bg-neutral-100 dark:bg-neutral-900 md:rounded-xl w-full md:w-8/9 min-h-[100vh] p-6 md:shadow-xl">
+            <div class="bg-neutral-100 dark:bg-neutral-900 md:rounded-xl w-full md:w-8/9 min-h-[100vh] p-5 md:shadow-xl">
                 <div class="flex flex-col md:flex-row md:items-center mb-3 justify-between">
                     <div class="flex flex-col">
                         <DocTitle />
@@ -28,7 +28,7 @@
                     <p>edit document!</p>
                 </template>
                 <template v-else>
-                    <ul class="space-y-1">
+                    <ul class="">
                         <template v-for="(r,i) in recent" :key="i">
                             <li v-if="i < limit">
                                 <nuxt-link class="flex justify-between p-1 hover:bg-neutral-400 rounded-xl" :class="[{ 'line-through': r.status === 'delete' }]" :key="r.document" :to="doc_action_link(r.document, 'w')">
@@ -60,7 +60,7 @@ export default {
     props: {
         limit: {
             type: Number,
-            default: 15
+            default: 10
         }
     },
     methods: {

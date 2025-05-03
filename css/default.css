@@ -5,6 +5,14 @@
 }
 
 /* disable preflight in content */
+.content h1 {
+    font-size: 2em;
+}
+
+.content h2 {
+    font-size: 1.5em;
+}
+
 .content a {
     color: royalblue;
 }
