@@ -6,12 +6,18 @@
                     <div class="flex flex-col">
                         <DocTitle />
                         <template v-if="$store.state.page.viewName === 'wiki' && $store.state.page.data.date">
-                            <p>최근 변경:<local-date :date="$store.state.page.data.date" /></p>
+                            <p class="text-sm">최근 변경:<local-date :date="$store.state.page.data.date" /></p>
                         </template>
                     </div>
                     <h1>content tools</h1>
                 </div>
-                <slot />
+                <article class="content">
+                    <slot />
+                    <div v-if="$store.state.page.viewName === 'license'">
+                        <h2>Modern license</h2>
+                        <pre>{{ License }}</pre>
+                    </div>
+                </article>
             </div>
             <div class="bg-neutral-100 dark:bg-neutral-900 md:rounded-xl w-full md:w-2/9 p-4 md:shadow-xl max-md:border-t">
                 <a href="/RecentChanges" class="text-xl font-bold mb-2">
@@ -43,6 +49,7 @@ import DocTitle from "./title.vue";
 import Common from "~/mixins/common";
 import RecentCardMixin from '~/mixins/recentCard';
 import LocalDate from "~/components/localDate";
+import License from "raw-loader!./LICENSE";
 
 export default {
     mixins: [Common, RecentCardMixin],
@@ -61,6 +68,11 @@ export default {
             const now = Math.floor((new Date()).getTime() / 1000);
             return (now - 86400) > date ? 'Y/m/d' : 'H:i:s';
         }
+    },
+    data() {
+        return {
+            License
+        };
     }
 }
 </script>

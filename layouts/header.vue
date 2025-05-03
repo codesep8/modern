@@ -1,7 +1,7 @@
 <template>
     <header class="h-13 bg-blue-500 text-white dark:bg-blue-600 font-bold flex items-center">
         <nav class="flex justify-between items-center w-full">
-            <div class="flex items-center gap-5">
+            <div class="flex items-center gap-4">
                 <nuxt-link to="/" class="ml-6 text-2xl">{{ $store.state.config['skin.modern.logo_text'] || "theseed" }}</nuxt-link>
                 <nuxt-link to="/RecentChanges" class="nav-links p-2 rounded-xl hover:bg-blue-600">
                     <i class="text-lg fa-solid fa-clock"></i>
@@ -15,6 +15,10 @@
                     <i class="text-lg fa-solid fa-toolbox"></i>
                     도구
                 </div>
+                <nuxt-link to="/random" class="nav-links p-2 rounded-xl hover:bg-blue-600">
+                    <i class="text-lg fa-solid fa-shuffle"></i>
+                    랜덤
+                </nuxt-link>
             </div>
             <div class="flex gap-4 items-center">
                 <Search />

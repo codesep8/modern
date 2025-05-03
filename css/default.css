@@ -3,3 +3,12 @@
 @theme {
     --color-primary: var(--modern-primary);
 }
+
+/* disable preflight in content */
+.content a {
+    color: royalblue;
+}
+
+.theseed-dark-mode .content a {
+    color: orange;
+}
