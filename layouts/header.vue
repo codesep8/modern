@@ -11,14 +11,14 @@
                     <i class="text-lg fa-solid fa-comment"></i>
                     최근 토론
                 </nuxt-link>
-                <div class="nav-links p-2 rounded-xl hover:bg-blue-600">
-                    <i class="text-lg fa-solid fa-toolbox"></i>
-                    도구
-                </div>
                 <nuxt-link to="/random" class="nav-links p-2 rounded-xl hover:bg-blue-600">
                     <i class="text-lg fa-solid fa-shuffle"></i>
                     랜덤
                 </nuxt-link>
+                <div class="nav-links p-2 rounded-xl hover:bg-blue-600">
+                    <i class="text-lg fa-solid fa-toolbox"></i>
+                    도구
+                </div>
             </div>
             <div class="flex gap-4 items-center">
                 <Search />
