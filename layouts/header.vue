@@ -23,9 +23,7 @@
             <div class="flex gap-4 items-center">
                 <Search />
                 <img class="md:mr-6 inline-block size-9 rounded-full" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"/>
-                <button class="mr-4 md:hidden rounded text-2xl hover:bg-secondary dark:hover:bg-secondary-dark">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+                <Mobile />
             </div>
         </nav>
     </header>
@@ -47,10 +45,12 @@
 
 <script>
 import Search from "./search.vue";
+import Mobile from "./mobile.vue";
 
 export default {
     components: {
-        Search
+        Search,
+        Mobile
     }
 }
 </script>
