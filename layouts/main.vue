@@ -12,6 +12,7 @@
                     <h1>content tools</h1>
                 </div>
                 <article class="content">
+                    <Mobile />
                     <slot />
                     <div v-if="$store.state.page.viewName === 'license'">
                         <h2>Modern license</h2>
@@ -50,12 +51,14 @@ import Common from "~/mixins/common";
 import RecentCardMixin from '~/mixins/recentCard';
 import LocalDate from "~/components/localDate";
 import License from "raw-loader!./LICENSE";
+import Mobile from "./mobile.vue";
 
 export default {
     mixins: [Common, RecentCardMixin],
     components: {
         DocTitle,
-        LocalDate
+        LocalDate,
+        Mobile,
     },
     props: {
         limit: {
